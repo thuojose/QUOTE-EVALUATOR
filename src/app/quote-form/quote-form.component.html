@@ -1,0 +1,31 @@
+<div class="form-style" id="quote-form">
+    <form #goalForm='ngForm' (ngSubmit)='submitQuote()' #quoteForm='ngForm'>
+    <h3 class="h3">QUOTE DETAILS</h3>
+    <div class="form-group">
+        <div class="left_part">
+            <label for="quote">Quote</label>
+          <input type="text" class="form-control" id="quote" [(ngModel)]="newQuote.quote" name="quote" #quote='ngModel' required>
+          <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger">
+            <p>quote is required</p>
+          </div>
+          <label for="author">AUTHOR</label>
+          <input type="text" class="form-control" id="author" [(ngModel)]="newQuote.author" name="author" #author='ngModel' required>
+          <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
+            <p>quote is required</p>
+          </div>
+          <label for="submitter">SUBMITTER</label>
+          <input type="text" class="form-control" id="name" [(ngModel)]="newQuote.name" name="name" #name='ngModel' required>
+          <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+            <p>submitter is required</p>
+          </div>
+            <label for="DATE" class="b">DATE:</label>
+            <input type="DATE" name="DATE" class="input b" id="DATE" required />
+            <label for="TIME ADDED" class="b">TIME ADDED:</label>
+            <input type="TIME" name="TIME ADDED" class="input b" id="TIME" required />
+            <button type="submit" id="submit-btn" >submit</button>
+            <!-- <form (ngSubmit)='submitQuote()' #quoteForm='ngForm'> -->
+        </div>
+       
+    </div>
+</form>
+</div>

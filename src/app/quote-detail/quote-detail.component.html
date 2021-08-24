@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="quote-detail.component.css">
+<div class="quote">
+    <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+
+    <div *ngFor="let item of quotes; let i = index">
+        <div class="content">
+            <div class="text">
+                <p>The quote is : {{item.quote}}</p>
+                <p>The author of this quote is: {{item.author}}</p>
+                <p>The name of submitter is : {{item.name}}</p>
+                <P>The date of submission:{{item.completeDate}}</P>
+                <div class="upvote-section">
+                    <button (click)="addVote(i)">upvote</button>
+                    <div>{{item.upVote}}</div>
+                </div>
+                <div class="downvote-section">
+                    <button (click)="cutVote(i)">downvote</button>
+                    <div>{{item.downVote}}</div>
+                </div>
+                <div>
+                <button (click)="deleteQuote(i)">delete</button>
+                </div>
+            
+                <div >
+                    <li appStrikethrough>{{item.name}} due on {{item.completeDate}}</li> 
+                    <div >
+                        <li appStrikethrough>{{item.name}} due on {{item.completeDate|date|uppercase}}</li> 
+
+            </div>
+           
+      
+        </div>
+        
+    </div>
+    
+
+</div>
+
